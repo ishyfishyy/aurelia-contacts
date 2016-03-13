@@ -1,0 +1,23 @@
+body {
+  color: $text-color;
+  padding-top: 70px;
+}
+
+a {
+  color: black;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: dimgray;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+input[type=checkbox]:focus {
+  outline: none;
+}

@@ -1,0 +1,36 @@
+<template>
+	<div class="panel panel-default contact-details">
+		<div class="panel-heading">
+			<input type="checkbox" value="1" id="${contact.id}" checked.bind="selectedContact.checked"/>&nbsp;
+			<strong>${selectedContact.username}</strong>
+		</div>
+		<div class="panel-body">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="text-center">
+					<img class="img-circle contact-image" src.bind="selectedContact.avatarUrl"/>
+				</div>
+
+				<input type="text" id="contact-username" placeholder="Username" class="contact-username invisible-input" value.bind="selectedContact.username">
+				<hr/>
+
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class=for="contact-email">Email</label>
+						<input type="text" id="contact-email" placeholder="Email" class="form-control" value.bind="selectedContact.email">
+					</div>
+
+					<div class="form-group">
+						<label class=for="contact-description">Description</label>
+						<input type="text" id="contact-description" placeholder="Description" class="form-control" value.bind="selectedContact.description">
+					</div>
+				</form>
+
+				<div class="row">
+					<div class="pull-right">
+						<button class="btn btn-primary" click.delegate="save()" disabled.bind="!canSave">Save Changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

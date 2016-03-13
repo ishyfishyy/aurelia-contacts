@@ -1,0 +1,30 @@
+<template>
+	<div class="contact-list">
+		<div class="filter-list contact-list">
+			<a click.delegate="applyFilter(0)" class="${selectedFilter === 0 ? 'active' : ''}">All</a>
+			<a click.delegate="applyFilter(1)" class="${selectedFilter === 1 ? 'active' : ''}">Not-checked</a>
+			<a click.delegate="applyFilter(2)" class="${selectedFilter === 2 ? 'active' : ''}">Checked</a>
+		</div>
+
+		<table class="table table-bordered">
+			<tbody>
+				<tr repeat.for="contact of filteredContacts">
+					<td class="center-checkbox">
+						<input type="checkbox" value="1" id="${contact.id}" checked.bind="contact.checked" />
+					</td>
+					<td class="${selectedId === contact.id ? 'active' : ''}">
+						<a route-href="route: contacts; params.bind: {id: contact.id}">
+							<label>${contact.username}</label><br/>
+							<small>${contact.email}</small>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<span>${filteredContacts.length} contacts</span>
+	</div>
+
+	<button class="btn btn-primary pull-right" click.delegate="addNew()"><span class="fa fa-plus"></span> Add</button>
+	<br/>
+</template>

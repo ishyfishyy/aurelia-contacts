@@ -1,0 +1,32 @@
+.contact-list {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.center-checkbox {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.filter-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.filter-list a {
+  cursor: pointer;
+  padding: 3px 10px 3px 10px;
+  border-radius: 10px;
+}
+
+.filter-list a:hover:not(.active) {
+  cursor: pointer;
+  border: 1px solid rgba(#F08080, 0.25);
+}
+
+.filter-list .active {
+  border: 1px solid lightcoral;
+  font-weight: bold;
+}

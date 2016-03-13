@@ -1,0 +1,23 @@
+.contact-details {
+
+}
+
+.contact-details .invisible-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-details .contact-username {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
