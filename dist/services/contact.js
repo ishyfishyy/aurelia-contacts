@@ -1,0 +1,10 @@
+"use strict";
+class Contact {
+    constructor() {
+        this.avatarUrl = "http://www.asthmamd.org/images/icon_user_1.png";
+        this.checked = false;
+    }
+}
+exports.Contact = Contact;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2VzL2NvbnRhY3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0lBUUM7UUFKQSxjQUFTLEdBQVcsZ0RBQWdELENBQUM7UUFFckUsWUFBTyxHQUFZLEtBQUssQ0FBQztJQUd6QixDQUFDO0FBQ0YsQ0FBQztBQVZZLGVBQU8sVUFVbkIsQ0FBQSIsImZpbGUiOiJzZXJ2aWNlcy9jb250YWN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENvbnRhY3Qge1xyXG5cdGlkOiBudW1iZXI7XHJcblx0dXNlcm5hbWU6IHN0cmluZztcclxuXHRlbWFpbDogc3RyaW5nO1xyXG5cdGF2YXRhclVybDogc3RyaW5nID0gXCJodHRwOi8vd3d3LmFzdGhtYW1kLm9yZy9pbWFnZXMvaWNvbl91c2VyXzEucG5nXCI7XHJcblx0ZGVzY3JpcHRpb246IHN0cmluZztcclxuXHRjaGVja2VkOiBib29sZWFuID0gZmFsc2U7XHJcblxyXG5cdGNvbnN0cnVjdG9yKCkge1xyXG5cdH1cclxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

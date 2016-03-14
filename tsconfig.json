@@ -1,15 +1,31 @@
 {
-  "compileOnSave": true,
+  "compileOnSave": false,
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "amd",
-    "target": "ES6"
+    "module": "commonjs",
+    "target": "ES6",
+    "moduleResolution": "classic",
+    "sourceMap": true
   },
   "filesGlob": [
-    "./**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "jspm_packages"
+  ],
+  "files": [
+    "src/app.ts",
+    "src/contact-detail.ts",
+    "src/contact-list.ts",
+    "src/main.ts",
+    "src/no-selection.ts",
+    "src/services/constants.ts",
+    "src/services/contact.ts",
+    "src/services/store.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }

@@ -1,7 +1,7 @@
 System.config({
   baseURL: "/",
   defaultJSExtensions: true,
-  transpiler: true,
+  transpiler: false,
   paths: {
     "*": "dist/*",
     "npm:*": "jspm_packages/npm/*",

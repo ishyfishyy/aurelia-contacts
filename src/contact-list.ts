@@ -52,6 +52,10 @@ export class ContactList {
 		this.selectedId = contact.id;
 	}
 
+	remove(contact: Contact): void {
+		this.contactStore.remove(contact);
+	}
+
 	addNew(): void {
 		this.contactStore.addNew();
 		this.applyFilter(this.selectedFilter);

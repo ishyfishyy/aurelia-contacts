@@ -11,7 +11,7 @@ export class ContactStore {
 
 	observerLocator: ObserverLocator;
 
-	constructor(private http: HttpClient, private observerLocator: ObserverLocator) {
+	constructor(private http: HttpClient, observerLocator: ObserverLocator) {
 		this.observerLocator = observerLocator;
 
 		//localStorage.clear();
@@ -75,30 +75,27 @@ export class ContactStore {
 
 	save(contact: Contact) {
 		return new Promise(executor => {
-			setTimeout(() => {
-				let instance = JSON.parse(JSON.stringify(contact));
-				let found: Contact = this.contacts.filter(x => x.id == contact.id)[0];
+			let instance = JSON.parse(JSON.stringify(contact));
+			let found: Contact = this.contacts.filter(x => x.id == contact.id)[0];
 
-				if(found) {
-					let index = this.contacts.indexOf(found);
-					Object.assign(this.contacts[index], instance);
-				} else {
-					instance.id = this.getId();
-					this.contacts.push(instance);
-				}
-				this.updateStorage();
+			if(found) {
+				let index = this.contacts.indexOf(found);
+				Object.assign(this.contacts[index], instance);
+			} else {
+				instance.id = this.getId();
+				this.contacts.push(instance);
+			}
+			this.updateStorage();
 
-				executor(instance);
-			}, 500);
+			executor(instance);
 		});
 	}
 
 	find(id: number) {
+		console.log("find request?");
 		return new Promise(executor => {
-			setTimeout(() => {
-				let found: Contact = this.contacts.filter(x => x.id == id)[0];
-				executor(found);
-			}, 500);
+			let found: Contact = this.contacts.filter(x => x.id == id)[0];
+			executor(found);
 		});
 		//return this.contacts.filter(x => x.id == id)[0];
 

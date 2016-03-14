@@ -22,7 +22,7 @@ export class ContactDetail {
 	activate(params: any, routeConfig: RouterConfiguration) {
 		this.routeConfig = routeConfig;
 
-		return this.contactStore.find(params.id).then(contact => {
+		return this.contactStore.find(params.id).then((contact: Contact) => {
 			this.selectedContact = JSON.parse(JSON.stringify(contact));
 			this.originalContact = contact;
 
@@ -31,7 +31,7 @@ export class ContactDetail {
 	}
 
 	save(): void {
-		this.contactStore.save(this.selectedContact).then(contact => {
+		this.contactStore.save(this.selectedContact).then((contact: Contact) => {
 			this.selectedContact = JSON.parse(JSON.stringify(this.selectedContact));
 			this.originalContact = contact;
 
