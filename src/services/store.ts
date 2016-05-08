@@ -24,7 +24,6 @@ export class ContactStore {
 			http.fetch('users')
 				.then(response => response.json())
 				.then(users => {
-					users.splice(5);
 					this.contacts = users.map((user: { id: number, login: string, avatar_url: string, type: string }) => {
 						let contact = new Contact();
 						contact.id = user.id;
@@ -36,6 +35,8 @@ export class ContactStore {
 
 						return contact;
 					});
+					this.contacts = this.contacts.splice(20);
+
 					this.updateStorage();
 					this.applyObservers();
 				})

@@ -6,15 +6,17 @@
 			<a click.delegate="applyFilter(2)" class="${selectedFilter === 2 ? 'active' : ''}">Checked</a>
 		</div>
 
+		<require from="./converter/to-upper-case-converter"></require>
+
 		<table class="table table-bordered">
 			<tbody>
-				<tr repeat.for="contact of filteredContacts">
+				<tr repeat.For="contact of filteredContacts">
 					<td class="center-checkbox">
 						<input type="checkbox" value="1" id="${contact.id}" checked.bind="contact.checked" />
 					</td>
-					<td class="${selectedId === contact.id ? 'active' : ''}">
+					<td class="${selectedId === contact.id ? 'active' : '' }">
 						<a route-href="route: contacts; params.bind: {id: contact.id}">
-							<label>${contact.username}</label><br/>
+							<label>${contact.username | toUpperCase}</label><br/>
 							<small>${contact.email}</small>
 						</a>
 					</td>

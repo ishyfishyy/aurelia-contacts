@@ -1,28 +1,27 @@
 import {Contact} from "./services/contact";
-import {ContactStore, ContactUpdated, ContactSelected} from "./services/store";
+import {ContactStore, ContactSelected, ContactUpdated} from "./services/store";
 
+import {autoinject} from 'aurelia-framework';
 import {inject} from "aurelia-dependency-injection";
 import {EventAggregator} from "aurelia-event-aggregator";
 import {RouterConfiguration} from "aurelia-router";
 
 @inject(ContactStore, EventAggregator)
 export class ContactDetail {
-	contactStore: ContactStore;
 	eventAggregator: EventAggregator;
 	routeConfig: RouterConfiguration;
 
 	selectedContact: Contact;
 	originalContact: Contact;
 
-	constructor(contactStore: ContactStore, eventAggregator: EventAggregator) {
-		this.contactStore = contactStore;
+	constructor(private _contactStore: ContactStore, eventAggregator: EventAggregator) {
 		this.eventAggregator = eventAggregator;
 	}
 
 	activate(params: any, routeConfig: RouterConfiguration) {
 		this.routeConfig = routeConfig;
 
-		return this.contactStore.find(params.id).then((contact: Contact) => {
+		return this._contactStore.find(params.id).then((contact: Contact) => {
 			this.selectedContact = JSON.parse(JSON.stringify(contact));
 			this.originalContact = contact;
 
@@ -31,7 +30,7 @@ export class ContactDetail {
 	}
 
 	save(): void {
-		this.contactStore.save(this.selectedContact).then((contact: Contact) => {
+		this._contactStore.save(this.selectedContact).then((contact: Contact) => {
 			this.selectedContact = JSON.parse(JSON.stringify(this.selectedContact));
 			this.originalContact = contact;
 

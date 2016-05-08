@@ -7,6 +7,9 @@ System.config({
     "npm:*": "jspm_packages/npm/*",
     "github:*": "jspm_packages/github/*"
   },
+  bundles: {
+    "bundle.js": []
+  },
 
   map: {
     "aurelia": "npm:aurelia@0.0.0",

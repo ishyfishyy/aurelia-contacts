@@ -1,5 +1,4 @@
-import {Router} from "aurelia-router";
-import {RouterConfiguration} from "aurelia-router";
+import {Router, RouterConfiguration} from "aurelia-router";
 
 export class App {
     router: Router;
