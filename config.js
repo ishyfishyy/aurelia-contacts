@@ -45,6 +45,9 @@ System.config({
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
     },
+    "github:jspm/nodelibs-os@0.1.0": {
+      "os-browserify": "npm:os-browserify@0.1.2"
+    },
     "github:jspm/nodelibs-path@0.1.0": {
       "path-browserify": "npm:path-browserify@0.0.0"
     },
@@ -384,6 +387,9 @@ System.config({
       "bn.js": "npm:bn.js@4.10.5",
       "brorand": "npm:brorand@1.0.5"
     },
+    "npm:os-browserify@0.1.2": {
+      "os": "github:jspm/nodelibs-os@0.1.0"
+    },
     "npm:parse-asn1@5.0.0": {
       "asn1.js": "npm:asn1.js@4.5.1",
       "browserify-aes": "npm:browserify-aes@1.0.6",
@@ -474,6 +480,9 @@ System.config({
     "npm:supports-color@3.1.2": {
       "has-flag": "npm:has-flag@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:typescript@1.8.7": {
+      "os": "github:jspm/nodelibs-os@0.1.0"
     },
     "npm:url@0.10.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

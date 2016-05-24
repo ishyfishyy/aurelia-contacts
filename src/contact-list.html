@@ -1,5 +1,7 @@
 <template>
 	<div class="contact-list">
+		<button class="btn btn-default" click.delegate="runRenderingTest()">Run Rendering Benchmark</button>
+
 		<div class="filter-list contact-list">
 			<a click.delegate="applyFilter(0)" class="${selectedFilter === 0 ? 'active' : ''}">All</a>
 			<a click.delegate="applyFilter(1)" class="${selectedFilter === 1 ? 'active' : ''}">Not-checked</a>
@@ -10,7 +12,7 @@
 
 		<table class="table table-bordered">
 			<tbody>
-				<tr repeat.For="contact of filteredContacts">
+				<tr repeat.for="contact of filteredContacts">
 					<td class="center-checkbox">
 						<input type="checkbox" value="1" id="${contact.id}" checked.bind="contact.checked" />
 					</td>

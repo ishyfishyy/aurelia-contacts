@@ -1,19 +1,14 @@
 import {Contact} from "./contact";
 import {Constants} from "./constants";
-import {inject} from 'aurelia-framework';
+import {autoinject} from "aurelia-dependency-injection";
 import {HttpClient} from "aurelia-fetch-client";
-import 'fetch';
 import {ObserverLocator} from "aurelia-binding";
 
-@inject(HttpClient, ObserverLocator)
+@autoinject
 export class ContactStore {
 	contacts: Array<Contact>;
 
-	observerLocator: ObserverLocator;
-
-	constructor(private http: HttpClient, observerLocator: ObserverLocator) {
-		this.observerLocator = observerLocator;
-
+	constructor(private http: HttpClient, private observerLocator: ObserverLocator) {
 		//localStorage.clear();
 		this.contacts = JSON.parse(localStorage.getItem(Constants.STORAGE_CONTACTS));
 
@@ -39,11 +34,8 @@ export class ContactStore {
 
 					this.updateStorage();
 					this.applyObservers();
-				})
-			;
-			console.log("Fetch");
+				});
 		}
-
 	}
 
 	applyObservers(): void {
@@ -93,13 +85,10 @@ export class ContactStore {
 	}
 
 	find(id: number) {
-		console.log("find request?");
 		return new Promise(executor => {
 			let found: Contact = this.contacts.filter(x => x.id == id)[0];
 			executor(found);
 		});
-		//return this.contacts.filter(x => x.id == id)[0];
-
 	}
 
 	private getId(): number {
@@ -108,22 +97,5 @@ export class ContactStore {
 
 	updateStorage(): void {
 		localStorage.setItem(Constants.STORAGE_CONTACTS, JSON.stringify(this.contacts));
-		console.log("update storage");
-	}
-}
-
-export class ContactUpdated {
-	contact: Contact;
-
-	constructor(contact: Contact) {
-		this.contact = contact;
-	}
-}
-
-export class ContactSelected {
-	contact: Contact;
-
-	constructor(contact: Contact) {
-		this.contact = contact;
 	}
 }

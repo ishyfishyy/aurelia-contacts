@@ -23,9 +23,7 @@
     "src/no-selection.ts",
     "src/services/constants.ts",
     "src/services/contact.ts",
-    "src/services/store.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+    "src/services/store.ts",
+    "src/converter/to-upper-case-converter.ts"
+  ]
 }
